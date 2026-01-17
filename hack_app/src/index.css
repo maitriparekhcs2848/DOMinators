@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .glass {
+    @apply bg-white/80 backdrop-blur-md border border-white/40 shadow-lg dark:bg-health-card-dark/80 dark:border-white/10;
+  }
+
+  .glass-dark {
+    /* Deprecated/Alias to glass in dark mode logic usually, keeping for compat */
+    @apply bg-slate-900/70 backdrop-blur-md border border-white/10 shadow-xl;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-xl;
+  }
+
+  .input-base {
+    @apply w-full rounded-lg border px-4 py-3 outline-none transition-all duration-200 bg-white border-health-border-light text-health-text-primary-light focus:ring-2 focus:ring-health-primary-light/50 dark:bg-black/20 dark:border-health-border-dark dark:text-health-text-primary-dark dark:focus:ring-health-primary-dark/50;
+  }
+}
+
+body {
+  @apply bg-health-bg-light text-health-text-primary-light antialiased transition-colors duration-300 dark:bg-health-bg-dark dark:text-health-text-primary-dark;
+  min-height: 100vh;
+}
